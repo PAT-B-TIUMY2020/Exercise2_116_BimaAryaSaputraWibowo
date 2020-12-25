@@ -93,8 +93,8 @@ namespace ClientEx2
             txtProdi.Text = "";
             txtAngkatan.Text = "";
             button3.Enabled = false;
-            button4.Enabled = false;
-            button2.Enabled = true;
+            button2.Enabled = false;
+            button1.Enabled = true;
             label6.Text = "";
             dataGridView1.DataSource = null;
         }
@@ -155,7 +155,7 @@ namespace ClientEx2
                         string nama = txtNama.Text;
                         string prodi = txtProdi.Text;
                         string angkatan = txtAngkatan.Text;
-                        classData.insertMahasiswa(nama, nim, prodi, angkatan);
+                        classData.insertMahasiswa(nim, nama, prodi, angkatan);
                         clear();
                         dataGridView1.DataSource = classData.getAllData();
                         MessageBox.Show("Data successfuly inserted");
@@ -183,9 +183,9 @@ namespace ClientEx2
             txtProdi.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
             txtAngkatan.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
 
-            button4.Enabled = true;
+            button2.Enabled = true;
             button3.Enabled = true;
-            button2.Enabled = false;
+            button1.Enabled = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -207,6 +207,8 @@ namespace ClientEx2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tI_UMYDataSet.Mahasiswa' table. You can move, or remove it, as needed.
+            this.mahasiswaTableAdapter.Fill(this.tI_UMYDataSet.Mahasiswa);
 
         }
     }

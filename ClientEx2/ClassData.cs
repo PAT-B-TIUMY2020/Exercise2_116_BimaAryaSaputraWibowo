@@ -12,7 +12,7 @@ namespace ClientEx2
     {
         string baseUrl = "http://localhost:7777/";
 
-        public void insertMahasiswa(string nama, string nim, string prodi, string angkatan)
+        public void insertMahasiswa(string nim, string nama, string prodi, string angkatan)
         {
             Mahasiswa mhs = new Mahasiswa();
             mhs.nama = nama;
